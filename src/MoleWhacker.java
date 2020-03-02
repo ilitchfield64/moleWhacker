@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package molewhacker;
+
 // Window
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,6 +21,7 @@ import javax.imageio.ImageIO;
 //User Input
 import java.util.Scanner;
 import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
@@ -32,6 +33,7 @@ import java.awt.event.MouseMotionListener;
 // System I/O
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 // Math Functions
 import java.time.Clock;
@@ -92,8 +94,8 @@ public class MoleWhacker extends JPanel implements MouseListener, MouseMotionLis
         holeRect4 = new Rectangle(1000,300,200,200);
         holeRect5 = new Rectangle(1300,300,200,200);
         try {
-            mole = ImageIO.read(new File("src/molewhacker/mole.png"));
-        
+           URL url = this.getClass().getResource("mole.png");
+            mole= ImageIO.read(url);
         } 
         catch (IOException e) {
             System.out.println("Image missing");
